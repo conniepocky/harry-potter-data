@@ -3,6 +3,7 @@ import keras
 import numpy as np
 import pandas as pd
 import nltk
+import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Read in the data
@@ -21,7 +22,9 @@ print(linesPerCharacter)
 
 top10 = linesPerCharacter.head(15)
 
-plt.bar(top10.index, top10.values)
+sns.barplot(x=top10.index, y=top10.values, palette="deep")
+
+plt.title("Line Distribution")
 
 plt.xticks(rotation=90, fontsize=7)
 
